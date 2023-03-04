@@ -1,0 +1,26 @@
+.failure-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.fail-img {
+  height: 35px;
+}
+.failure-para {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'Roboto';
+}
+.retry-button {
+  background-color: #ffffff;
+  color: #171f46;
+  font-size: 13px;
+  height: 32px;
+  width: 85px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Roboto';
+}

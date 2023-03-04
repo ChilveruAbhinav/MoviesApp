@@ -1,0 +1,12 @@
+.popular-container {
+  min-height: 75vh;
+  background-color: #181818;
+  background-size: cover;
+  padding: 30px;
+}
+.popular-list {
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}

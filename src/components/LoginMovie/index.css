@@ -1,0 +1,70 @@
+.login-main-container {
+  background-image: url('https://res.cloudinary.com/dno62jfce/image/upload/v1677301089/netfilx_1login_img_uwd94h.png');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-logo {
+  align-self: flex-start;
+  height: 38px;
+}
+.login-form {
+  background-color: #0c0b10;
+  opacity: 0.8;
+  border-radius: 8px;
+  padding: 16px;
+  width: 400px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.login-heading {
+  font-family: 'Roboto';
+  font-size: 30px;
+  align-self: center;
+  color: #ffffff;
+  font-weight: 600;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.label {
+  font-family: 'Roboto';
+  font-size: 13px;
+  color: #ffffff;
+}
+.input-el {
+  background-color: #333333;
+  border-radius: 10px;
+  height: 40px;
+  padding: 9px;
+  width: 360px;
+  border: none;
+  margin-top: 8px;
+}
+.login-button {
+  height: 35px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #e50914;
+  font-family: 'Roboto';
+  font-size: 13px;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.error-msg {
+  font-family: 'Roboto';
+  font-size: 13px;
+  color: #dc2626;
+}

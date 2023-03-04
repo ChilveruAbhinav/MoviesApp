@@ -1,0 +1,90 @@
+.home-container-main-container {
+  height: 75vh;
+  background-color: #131313;
+  background-size: cover;
+  padding-left: 75px;
+  background-size: cover;
+  padding-right: 75px;
+  padding-top: 30px;
+  margin-top: 0px;
+}
+.poster-container {
+  height: 50vh;
+  background-size: cover;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.poster-title {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  margin-bottom: 0px;
+}
+.poster-overview {
+  color: #ffffff;
+  font-size: 15px;
+  margin-top: 0px;
+  font-family: 'Roboto';
+}
+.play-button {
+  background-color: #ffffff;
+  border: none;
+  height: 35px;
+  width: 85px;
+  color: #171f46;
+  font-size: 15px;
+  font-family: 'Roboto';
+}
+
+.slick-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 0px;
+  font-size: 24px;
+}
+.slick-heading-2 {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 15px;
+  font-size: 24px;
+}
+.slick-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.loader-container {
+  align-self: center;
+}
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.failure-img {
+  height: 75px;
+}
+.failure-para {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: 'Roboto';
+}
+.failure-button {
+  background-color: #ffffff;
+  color: #171f46;
+  font-size: 13px;
+  height: 45px;
+  font-family: 'Roboto';
+  border: none;
+  cursor: pointer;
+}
