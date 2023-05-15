@@ -1,0 +1,9 @@
+.search-list-item {
+  list-style-type: none;
+}
+.search-img {
+  height: 170px;
+  width: 255px;
+  border-radius: 8px;
+  margin-right: 10px;
+}

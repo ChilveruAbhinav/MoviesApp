@@ -1,94 +1,123 @@
 import {Component} from 'react'
-import Loader from 'react-loader-spinner'
-import Cookies from 'js-cookie'
-import PopularItem from '../PopularItem'
-import Header from '../Header'
-import './index.css'
-import Footer from '../Footer'
-import Failure from '../Failure'
 
-const apiStatusConstants = {
+import Cookies from 'js-cookie'
+
+import Loader from 'react-loader-spinner'
+
+import Header from '../Header'
+import Footer from '../Footer'
+
+import SearchItem from '../SearchItem'
+
+import './index.css'
+
+const popularDetails = {
   initial: 'INITIAL',
   success: 'SUCCESS',
+  loading: 'LOADING',
   failure: 'FAILURE',
-  inProgress: 'IN_PROGRESS',
 }
 
 class Popular extends Component {
-  state = {apiPopular: apiStatusConstants.initial, popularList: []}
+  state = {popularList: [], popularStatus: popularDetails.initial}
 
   componentDidMount() {
-    this.getPopularMovies()
+    this.getPopularData()
   }
 
-  getPopularMovies = async () => {
-    this.setState({apiPopular: apiStatusConstants.inProgress})
+  getPopularData = async () => {
+    this.setState({popularStatus: popularDetails.loading})
+
     const jwtToken = Cookies.get('jwt_token')
 
-    const popularApi = 'https://apis.ccbp.in/movies-app/popular-movies'
+    const popularUrl = 'https://apis.ccbp.in/movies-app/popular-movies'
+
     const options = {
+      method: 'GET',
       headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
-      method: 'GET',
     }
-    const response = await fetch(popularApi, options)
+
+    const response = await fetch(popularUrl, options)
+
     if (response.ok === true) {
-      const fetchedData = await response.json()
-      const popularMoviesList = fetchedData.results.map(pop => ({
-        id: pop.id,
-        backDrop: pop.backdrop_path,
-        posterDrop: pop.poster_path,
-        popTitle: pop.title,
+      const data = await response.json()
+      const fetchedData = data.results.map(eachMovie => ({
+        backdropPath: eachMovie.backdrop_path,
+        id: eachMovie.id,
+        overview: eachMovie.overview,
+        posterPath: eachMovie.poster_path,
+        title: eachMovie.title,
       }))
+      console.log(fetchedData)
       this.setState({
-        apiPopular: apiStatusConstants.success,
-        popularList: popularMoviesList,
+        popularList: fetchedData,
+        popularStatus: popularDetails.success,
       })
     } else {
-      this.setState({apiPopular: apiStatusConstants.failure})
+      this.setState({popularStatus: popularDetails.failure})
     }
   }
 
-  renderLoader = () => (
-    <div className="loader-container" testid="loader">
-      <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
+  onLoadingData = () => (
+    <div>
+      <div className="loader-container" testid="loader">
+        <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
+      </div>
     </div>
   )
 
-  renderPopularSuccess = () => {
+  onFailureOfData = () => (
+    <div>
+      <div className="failureContainer">
+        <img
+          src="https://www.shutterstock.com/image-vector/computer-server-big-data-error-600w-2156541851.jpg"
+          alt="failure view"
+          className="failure-image"
+        />
+        <p className="failurePara">Something went wrong. Please try again</p>
+        <button
+          type="button"
+          onClick={this.retryFunction}
+          className="failure-button"
+        >
+          Try Again
+        </button>
+      </div>
+    </div>
+  )
+
+  retryFunction = () => {
+    this.getPopularData()
+  }
+
+  onSuccessData = () => {
     const {popularList} = this.state
+
     return (
-      <>
-        <ul className="popular-list">
-          {popularList.map(item => (
-            <PopularItem key={item.id} popularDetails={item} />
-          ))}
-        </ul>
-      </>
+      <div>
+        <div className="popularContainer">
+          <ul className="unOrder">
+            {popularList.map(each => (
+              <SearchItem eachMovie={each} key={each.id} />
+            ))}
+          </ul>
+          <Footer />
+        </div>
+      </div>
     )
   }
 
-  retryApi = () => {
-    this.getPopularMovies()
-  }
-
-  renderFailure = () => (
-    <>
-      <Failure retryApi={this.retryApi} />
-    </>
-  )
-
-  renderPopularJsx = () => {
-    const {apiPopular} = this.state
-
-    switch (apiPopular) {
-      case apiStatusConstants.success:
-        return this.renderPopularSuccess()
-      case apiStatusConstants.inProgress:
-        return this.renderLoader()
-      case apiStatusConstants.failure:
-        return this.renderFailure()
+  renderingData = () => {
+    const {popularStatus} = this.state
+    switch (popularStatus) {
+      case popularDetails.loading:
+        return this.onLoadingData()
+      case popularDetails.failure:
+        return this.onFailureOfData()
+      case popularDetails.success:
+        return this.onSuccessData()
       default:
         return null
     }
@@ -96,12 +125,12 @@ class Popular extends Component {
 
   render() {
     return (
-      <>
+      <div className="main">
         <Header />
-        <div className="popular-container">{this.renderPopularJsx()}</div>
-        <Footer />
-      </>
+        {this.renderingData()}
+      </div>
     )
   }
 }
+
 export default Popular

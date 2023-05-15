@@ -1,0 +1,9 @@
+.sim-item {
+  list-style-type: none;
+}
+.sim-image {
+  height: 170px;
+  width: 255px;
+  border-radius: 8px;
+  margin: 10px;
+}

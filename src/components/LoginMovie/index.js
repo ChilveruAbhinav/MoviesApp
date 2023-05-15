@@ -1,10 +1,17 @@
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
+import {AiFillEye, AiFillEyeInvisible} from 'react-icons/ai'
 import Cookies from 'js-cookie'
 import './index.css'
 
 class LoginMovie extends Component {
-  state = {password: '', username: '', error: false, errMsg: ''}
+  state = {
+    password: '',
+    username: '',
+    error: false,
+    errMsg: '',
+    pwSeen: false,
+  }
 
   onChangePassword = event => {
     this.setState({password: event.target.value})
@@ -47,8 +54,12 @@ class LoginMovie extends Component {
     }
   }
 
+  onClickSeen = () => {
+    this.setState(prevState => ({pwSeen: !prevState.pwSeen}))
+  }
+
   render() {
-    const {username, password, error, errMsg} = this.state
+    const {username, password, error, errMsg, pwSeen} = this.state
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
@@ -79,14 +90,27 @@ class LoginMovie extends Component {
             <label className="label" htmlFor="password">
               PASSWORD
             </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              className="input-el"
-              placeholder="Password"
-              onChange={this.onChangePassword}
-            />
+            <div className="password-container">
+              <input
+                type="password"
+                id="password"
+                value={password}
+                className="input-el-2"
+                placeholder="Password"
+                onChange={this.onChangePassword}
+              />
+              <button
+                className="password-seen"
+                type="button"
+                onClick={this.onClickSeen}
+              >
+                {pwSeen ? (
+                  <AiFillEye className="eye" />
+                ) : (
+                  <AiFillEyeInvisible className="eye" />
+                )}
+              </button>
+            </div>
           </div>
           {error && <p className="error-msg">*{errMsg}</p>}
           <button className="login-button" type="submit">

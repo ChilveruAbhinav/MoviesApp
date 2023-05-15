@@ -1,76 +1,144 @@
-.account-container {
+* {
+  font-family: 'Roboto';
+}
+
+.account-page {
   height: 80vh;
-  padding: 45px;
-  background-color: #ffffff;
-  background-size: cover;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: #e5e5e5;
+  padding-top: 32px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 .account-heading {
-  color: #131313;
-  font-size: 36px;
-  font-family: 'Roboto';
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.line {
-  background-color: #cbd5e1;
-  width: 100%;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-.details-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.account-para {
-  color: #94a3b8;
+  font-style: normal;
   font-weight: 500;
-  font-size: 25px;
-  font-family: 'Roboto';
+  font-size: 24px;
+  line-height: 28px;
+  color: #131313;
+  margin-bottom: 8px;
 }
-.user-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 15px;
-}
-.acc-username {
-  color: #1e293b;
-  font-size: 25px;
-  font-family: 'Roboto';
-}
-.acc-password {
-  color: #64748b;
-  font-size: 25px;
-  margin-top: 0px;
-  font-family: 'Roboto';
-}
-.plan {
-  color: #1e293b;
-  font-size: 25px;
-  font-family: 'Roboto';
-  margin-left: 15px;
-}
-.quality {
-  border: 1px solid #1e293b;
-  margin-left: 15px;
-  color: #1e293b;
-  font-size: 25px;
-  font-family: 'Roboto';
-}
-.logout-button {
-  background-color: #e50914;
-  height: 40px;
-  width: 90px;
-  color: #ffffff;
-  font-size: 14px;
+.separator {
   border: none;
-  cursor: pointer;
-  align-self: center;
-  font-family: 'Roboto';
+  border-top: 3px solid #cbd5e1;
+  border-radius: 10px;
+  margin-bottom: 24px;
 }
+.member-ship-details {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+}
+.member-ship-text {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #94a3b8;
+  margin-right: 11px;
+}
+.username {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+.password {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #64748b;
+}
+.password-container {
+  display: flex;
+  align-items: center;
+}
+.plan-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.plan-details-text {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #94a3b8;
+  margin-right: 23px;
+}
+.plan-name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #1e293b;
+  margin-right: 9px;
+}
+.plan-feature {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #1e293b;
+  border: 1px solid #1e293b;
+  border-radius: 2px;
+  padding: 2px 4px;
+  height: 22px;
+  width: 64px;
+}
+.log-out-btn {
+  height: 40px;
+  width: 89px;
+  background: #e50914;
+  border-radius: 4px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  align-self: center;
+  border: none;
+  margin-top: 24px;
+  cursor: pointer;
+  outline: none;
+}
+/*@media (min-width: 768px) {
+  .account-heading {
+    margin-bottom: 24px;
+  }
+  .member-ship-text {
+    margin-right: 24px;
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .username {
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 13px;
+  }
+  .password {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .plan-details-text {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .plan-name {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .plan-feature {
+    font-size: 18px;
+    line-height: 23px;
+    width: 79px;
+    height: 27px;
+  }
+  .log-out-btn {
+    margin-top: 0px;
+  }
+}*/

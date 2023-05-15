@@ -1,11 +1,14 @@
+import {Link} from 'react-router-dom'
 import './index.css'
 
 const PopularItem = props => {
   const {popularDetails} = props
-  const {posterDrop, popTitle} = popularDetails
+  const {id, posterDrop, popTitle} = popularDetails
   return (
     <li className="item">
-      <img src={posterDrop} alt={popTitle} className="image" />
+      <Link to={`/movies/${id}`} className="link-item">
+        <img src={posterDrop} alt={popTitle} className="image" />
+      </Link>
     </li>
   )
 }

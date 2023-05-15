@@ -1,12 +1,32 @@
-.popular-container {
-  min-height: 75vh;
-  background-color: #181818;
-  background-size: cover;
-  padding: 30px;
+.failure-image {
+  height: 300px;
+  min-width: 100%;
 }
-.popular-list {
-  padding-left: 0px;
+.failureContainer {
+  height: 100vh;
+  text-align: center;
+}
+.failure-button {
+  padding: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.popularContainer {
+  background-color: #252525;
+  text-align: center;
+}
+.unOrder {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }

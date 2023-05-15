@@ -1,52 +1,63 @@
- renderTrending = () => {
-    const {trendingMovies, originalMovies} = this.state
-
-    const settings = {
-      dots: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
-          },
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
-        },
-      ],
-    }
-
-    console.log(originalMovies)
-    return (
-      <>
-        <h1 className="slick-heading">Tending Now</h1>
-        <Slider {...settings}>
-          {trendingMovies.map(item => (
-            <SlickItem key={item.id} slickData={item} />
-          ))}
-        </Slider>
-        <h1 className="slick-heading-2">Originals</h1>
-        <Slider {...settings}>
-          {originalMovies.map(item => (
-            <SlickItem key={item.id} slickData={item} />
-          ))}
-        </Slider>
-      </>
-    )
+ "adult": false,
+    "backdrop_path": "https://assets.ccbp.in/frontend/react-js/movies-app/venom-let-there-be-carnage-movie-background-v0.png",
+    "budget": "11 Crores",
+    "genres": [
+      {
+        "id": "af2384dc-494b-48a7-a94d-91e6b279f20b",
+        "name": "Science Fiction"
+      },
+      {
+        "id": "16106068-2d4e-438f-8a9a-fa0b91e4246a",
+        "name": "Action"
+      },
+      {
+        "id": "0c29016b-ff7f-4d67-8f95-f8681bc7ff1c",
+        "name": "Adventure"
+      }
+    ],
+    "id": "51b4602f-b0f2-4c81-98e0-a2a409b13926",
+    "overview": "Supervillains Harley Quinn, Bloodsport, Peacemaker and a collection of nutty cons at Belle Reve prison join the super-secret, super-shady Task Force X as they are dropped off at the remote, enemy-infused island of Corto Maltese.",
+    "poster_path": "/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
+    "release_date": "2021-09-30",
+    "runtime": 97,
+    "similar_movies": [
+      {
+        "backdrop_path": "https://assets.ccbp.in/frontend/react-js/movies-app/dune-movie-background-v0.png",
+        "id": "c6ef2389-078a-4117-b2dd-1dee027e5e8e",
+        "overview": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people.",
+        "poster_path": "https://assets.ccbp.in/frontend/react-js/movies-app/dune-movie-poster.png",
+        "title": "Dune"
+      },
+      {
+        "backdrop_path": "https://assets.ccbp.in/frontend/react-js/movies-app/no-time-to-die-movie-background-v0.png",
+        "id": "92c2cde7-d740-443d-8929-010b46cb0305",
+        "overview": "Bond has left active service and is enjoying a tranquil life in Jamaica. His peace is short-lived when his old friend Felix Leiter from the CIA turns up asking for help. The mission to rescue a kidnapped scientist turns out to be far more treacherous than expected, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.",
+        "poster_path": "https://assets.ccbp.in/frontend/react-js/movies-app/no-time-to-die-movie-poster.png",
+        "title": "No Time to Die"
+      },
+      {
+        "backdrop_path": "https://assets.ccbp.in/frontend/react-js/movies-app/shang-chi-and-the-legend-of-the-ten-rings-movie-background-v0.png",
+        "id": "046084e1-a782-4086-b723-f98c5c57ebc0",
+        "overview": "Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.",
+        "poster_path": "https://assets.ccbp.in/frontend/react-js/movies-app/shang-chi-and-the-legend-of-the-ten-rings-movie-poster.png",
+        "title": "Shang-Chi and the Legend of the Ten Rings"
+      },
+      {
+        "backdrop_path": "https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-background-v0.png",
+        "id": "efb33428-5527-44d0-a713-1aeef4d56968",
+        "overview": "Austin's hottest DJ, Jungle Julia, sets out into the night to unwind with her two friends Shanna and Arlene. Covertly tracking their moves is Stuntman Mike, a scarred rebel leering from behind the wheel of his muscle car, revving just feet away.",
+        "poster_path": "https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-poster.png",
+        "title": "Death Proof"
+      }
+    ],
+    "spoken_languages": [
+      {
+        "id": "4bc5f2cf-04d6-4064-bd0d-fc927fda507d",
+        "english_name": "English"
+      }
+    ],
+    "title": "Venom: Let There Be Carnage",
+    "vote_average": 6.8,
+    "vote_count": 1514
   }
+}
